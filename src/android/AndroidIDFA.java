@@ -7,9 +7,9 @@ package com.praves.cordova.android.idfa;
  */
 
 //Cordova imports
-import org.apache.cordova.CordovaInterface; 
-import org.apache.cordova.CallbackContext; 
-import org.apache.cordova.CordovaPlugin; 
+import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
 
 //Android imports
@@ -20,7 +20,7 @@ import android.app.Activity;
 import android.util.Log;
 
 //JSON Imports
-import org.json.JSONArray; 
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONException;
 
@@ -44,22 +44,22 @@ import com.praves.cordova.android.idfa.CoreException;
 public class AndroidIDFA extends CordovaPlugin {
 
     Context context;
-    Application app;   
+    Application app;
     boolean enableLog;
     Activity activity;
     public static final String TAG = "AndroidIDFA";
 
     //Constructor function.
-    public void initialize(CordovaInterface cordova, CordovaWebView webView) { 
+    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
         context = this.cordova.getActivity().getApplicationContext();
-        app = this.cordova.getActivity().getApplication(); 
+        app = this.cordova.getActivity().getApplication();
         activity = this.cordova.getActivity();
-        enableLog =  false; 
+        enableLog =  false;
     }
 
     @Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException { 
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         try {
             if ("getAdInfo".equals(action)) {
                 getAdInfo(callbackContext);

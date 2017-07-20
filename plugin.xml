@@ -22,13 +22,13 @@
 -->
 
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-android-idfa" version="1.0.4">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="lycwed-cordova-plugin-idfa" version="1.0.4">
 
     <name>Advertising ID (IDFA) Plugin using Google Play Services for Android</name>
     <description>Phonegap, Cordova, Intel XDK plugin for Android to get Advertising Id Info using Google Play Services</description>
     <keywords>google,google play,advertising id,idfa,android,download,install</keywords>
 
-    <author email="praves.dev@outlook.com" href="https://github.com/praves77/cordova-plugin-android-idfa">praves</author>
+    <author href="https://github.com/lycwed/lycwed-cordova-plugin-idfa">lycwed</author>
 
     <engines>
         <engine name="cordova" version=">=3.0.0" />
@@ -36,8 +36,8 @@
 
     <license>MIT</license>
 
-    <repo>https://github.com/praves77/cordova-plugin-android-idfa.git</repo>
-    <issue>https://github.com/praves77/cordova-plugin-android-idfa/issues</issue>
+    <repo>https://github.com/lycwed/lycwed-cordova-plugin-idfa.git</repo>
+    <issue>https://github.com/lycwed/lycwed-cordova-plugin-idfa/issues</issue>
 
     <js-module src="www/androidIDFA.js" name="androidIDFA">
         <!--<clobbers target="androidIDFA" />-->
@@ -56,10 +56,10 @@
             <param name="android-package" value="com.praves.cordova.android.idfa.AndroidIDFA" />
         </feature>
     </config-file>
-    
+
     <framework src="com.google.android.gms:play-services-ads:+" />
 
-</platform> 
+</platform>
 
 <!-- ios-specific elements -->
 <platform name="ios">
