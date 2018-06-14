@@ -1,13 +1,10 @@
 {
   "name": "lycwed-cordova-plugin-idfa",
-  "version": "1.0.1",
-  "description": "Cordova Advertising ID (IDFA) Plugin for Android using Google Play Services API",
+  "version": "1.0.5",
+  "description": "Cordova plugin to get Advertising ID (IDFA)",
   "cordova": {
     "id": "lycwed-cordova-plugin-idfa",
-    "platforms": [
-      "android",
-      "browser"
-    ]
+    "platforms": ["android","ios"]
   },
   "repository": {
     "type": "git",
@@ -20,26 +17,13 @@
     "cordova",
     "idfa",
     "google",
-    "google play",
-    "advertising id",
-    "idfa for android",
-    "cordova plugin",
+    "apple",
     "advertiserId",
-    "advertisingId for android",
-    "advertising id for android",
-    "advertising id for android using google play",
-    "advertising id for android using google play services",
     "android",
-    "download",
-    "install",
+    "ios",
     "ecosystem:cordova",
-    "cordova-android"
-  ],
-  "engines": [
-    {
-      "name": "cordova",
-      "version": ">=3.0.0"
-    }
+    "cordova-android",
+    "cordova-ios"
   ],
   "author": "lycwed",
   "licenses": [

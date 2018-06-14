@@ -1,7 +1,7 @@
     var cordova = require('cordova');
-    var androidIDFA = {
+    var AndroidIDFA = {
 
-        pluginVersion : "1.0.1", //TODO Need to read from plugin.xml file. this value should be in sync plugin.xml value
+        pluginVersion : "1.0.5", //TODO Need to read from plugin.xml file. this value should be in sync plugin.xml value
 
         /**
          * Function to get version of the plugin.
@@ -44,5 +44,5 @@
 
     };
 
-    module.exports = androidIDFA;
+    module.exports = AndroidIDFA;
 

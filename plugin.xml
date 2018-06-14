@@ -1,80 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Copyright (c) 2015 praves
+<plugin id="lycwed-cordova-plugin-idfa" version="1.0.5" 
+    xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to deal
-  in the Software without restriction, including without limitation the rights
-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-  copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in all
-  copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-  SOFTWARE.
--->
-
-
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="lycwed-cordova-plugin-idfa" version="1.0.4">
-
-    <name>Advertising ID (IDFA) Plugin using Google Play Services for Android</name>
+    <name>lycwed-cordova-plugin-idfa</name>
     <description>Phonegap, Cordova, Intel XDK plugin for Android to get Advertising Id Info using Google Play Services</description>
     <keywords>google,google play,advertising id,idfa,android,download,install</keywords>
-
     <author href="https://github.com/lycwed/lycwed-cordova-plugin-idfa">lycwed</author>
-
     <engines>
         <engine name="cordova" version=">=3.0.0" />
     </engines>
-
     <license>MIT</license>
-
     <repo>https://github.com/lycwed/lycwed-cordova-plugin-idfa.git</repo>
     <issue>https://github.com/lycwed/lycwed-cordova-plugin-idfa/issues</issue>
 
-    <js-module src="www/androidIDFA.js" name="androidIDFA">
-        <!--<clobbers target="androidIDFA" />-->
-        <merges target="androidIDFA" />
+    <js-module src="www/AndroidIDFA.js" name="AndroidIDFA">
+        <!--<clobbers target="AndroidIDFA" />-->
+        <merges target="AndroidIDFA" />
+        <merges target="cordova.plugins.AndroidIDFA" />
     </js-module>
 
-<!-- android-specific elements -->
-<platform name="android">
+    <!-- android-specific elements -->
+    <platform name="android">
+        <source-file src="src/android/AndroidIDFA.java" target-dir="src/com/praves/cordova/idfa" />
+        <source-file src="src/android/CoreException.java" target-dir="src/com/praves/cordova/idfa" />
+        <source-file src="src/android/AdvertisingIdClient.java" target-dir="src/com/praves/cordova/idfa" />
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AndroidIDFA">
+                <param name="android-package" value="com.praves.cordova.android.idfa.AndroidIDFA" />
+            </feature>
+        </config-file>
+        <framework src="com.google.android.gms:play-services-ads:+" />
+    </platform>
 
-    <source-file src="src/android/AndroidIDFA.java" target-dir="src/com/praves/cordova/idfa" />
-    <source-file src="src/android/CoreException.java" target-dir="src/com/praves/cordova/idfa" />
-    <source-file src="src/android/AdvertisingIdClient.java" target-dir="src/com/praves/cordova/idfa" />
-
-    <config-file target="res/xml/config.xml" parent="/*">
+    <!-- ios-specific elements -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
         <feature name="AndroidIDFA">
-            <param name="android-package" value="com.praves.cordova.android.idfa.AndroidIDFA" />
+            <param name="ios-package" value="AndroidIDFA"/>
         </feature>
-    </config-file>
-
-    <framework src="com.google.android.gms:play-services-ads:+" />
-
-</platform>
-
-<!-- ios-specific elements -->
-<platform name="ios">
-
-    <config-file target="config.xml" parent="/*">
-    <feature name="AndroidIDFA">
-      <param name="ios-package" value="AndroidIDFA"/>
-    </feature>
-    </config-file>
-
-    <framework src="AdSupport.framework" weak="true" />
-
-  <header-file src="src/ios/AndroidIDFA.h" />
-  <source-file src="src/ios/AndroidIDFA.m" />
-
-</platform>
-
+        </config-file>
+        <framework src="AdSupport.framework" weak="true" />
+        <header-file src="src/ios/AndroidIDFA.h" />
+        <source-file src="src/ios/AndroidIDFA.m" />
+    </platform>
 </plugin>
